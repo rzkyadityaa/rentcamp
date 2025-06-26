@@ -1,0 +1,198 @@
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #f8f9fa;
+}
+
+header.bg-light {
+    background: linear-gradient(120deg, #e8f5e9 60%, #c8e6c9 100%) !important;
+    position: relative;
+    overflow: hidden;
+}
+header .hero-icon {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 16px;
+    filter: drop-shadow(0 2px 8px #43c06d33);
+}
+
+.card {
+    border: none;
+    border-radius: 18px;
+    box-shadow: 0 4px 16px rgba(60, 120, 60, 0.08);
+    transition: transform 0.2s, box-shadow 0.2s, opacity 0.5s;
+    opacity: 0;
+    transform: translateY(40px);
+}
+.card.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+.card:hover {
+    transform: translateY(-8px) scale(1.04);
+    box-shadow: 0 12px 32px rgba(60, 120, 60, 0.18);
+}
+.card-img-top {
+    height: 220px;
+    object-fit: contain;
+    background: #fff;
+    padding: 16px 0;
+    border-top-left-radius: 18px;
+    border-top-right-radius: 18px;
+    transition: filter 0.3s, transform 0.3s;
+}
+.card:hover .card-img-top {
+    filter: brightness(0.92) saturate(1.2);
+    transform: scale(1.04);
+}
+.card-title {
+    color: #218838;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+.btn-success, .btn-outline-success {
+    border-radius: 30px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    box-shadow: 0 2px 8px rgba(33,136,56,0.08);
+    transition: background 0.2s, color 0.2s, box-shadow 0.2s, transform 0.2s;
+    background: linear-gradient(90deg, #43c06d 0%, #218838 100%);
+    border: none;
+}
+.btn-success:hover, .btn-outline-success:hover {
+    background: linear-gradient(90deg, #218838 0%, #43c06d 100%);
+    color: #fff;
+    transform: scale(1.07);
+    box-shadow: 0 4px 16px rgba(33,136,56,0.18);
+}
+section.container {
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 2px 12px rgba(60, 120, 60, 0.07);
+    padding: 40px 24px;
+    margin-bottom: 40px;
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.7s, transform 0.7s;
+}
+section.container.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+.bg-success {
+    background: linear-gradient(90deg, #218838 60%, #43c06d 100%) !important;
+}
+footer {
+    font-size: 0.95rem;
+    background: #222;
+}
+.navbar {
+    border-bottom-left-radius: 18px;
+    border-bottom-right-radius: 18px;
+    box-shadow: 0 2px 8px rgba(33,136,56,0.08);
+}
+.fitur-icon {
+    width: 36px;
+    height: 36px;
+    margin-bottom: 10px;
+    color: #43c06d;
+}
+.fitur-card {
+    border: 1.5px solid #43c06d33;
+    background: #f6fff7;
+    transition: box-shadow 0.2s, border 0.2s;
+}
+.fitur-card:hover {
+    border: 2px solid #218838;
+    box-shadow: 0 4px 16px #43c06d33;
+}
+.testimoni .card {
+    border-left: 4px solid #43c06d;
+    background: #f6fff7;
+    position: relative;
+    padding-left: 32px;
+}
+.testimoni .avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #43c06d;
+    margin-bottom: 8px;
+}
+.testimoni .quote {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    font-size: 2.5rem;
+    color: #43c06d33;
+    z-index: 0;
+}
+@media (max-width: 767px) {
+    section.container {
+        padding: 24px 6px;
+    }
+    .card-img-top {
+        height: 160px;
+        padding: 10px 0;
+    }
+}
+
+/* Animasi Loading Overlay */
+.loading-overlay {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(255,255,255,0.7);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.3s;
+}
+.loading-spinner {
+    border: 6px solid #e0e0e0;
+    border-top: 6px solid #43c06d;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    animation: spin 1s linear infinite;
+}
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Efek klik pada tombol */
+.btn, button {
+    transition: transform 0.08s;
+}
+.btn:active, button:active {
+    transform: scale(0.96);
+}
+
+/* Notifikasi Toast */
+.toast-custom {
+    position: fixed;
+    top: 30px;
+    right: 30px;
+    min-width: 220px;
+    z-index: 10500;
+    background: #fff;
+    color: #218838;
+    border-left: 6px solid #43c06d;
+    box-shadow: 0 4px 16px rgba(60,120,60,0.13);
+    border-radius: 8px;
+    padding: 16px 24px;
+    font-weight: 500;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s, top 0.4s;
+}
+.toast-custom.show {
+    opacity: 1;
+    pointer-events: auto;
+    top: 50px;
+}
+.toast-custom.error {
+    color: #c0392b;
+    border-left-color: #c0392b;
+} 
